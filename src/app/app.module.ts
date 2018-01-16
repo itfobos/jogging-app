@@ -14,6 +14,9 @@ import {RouterModule} from '@angular/router';
 import {routes} from './app.routes';
 import {AuthGuardService} from './auth-guard.service';
 
+import {MatButtonModule} from '@angular/material/button';
+import {MatCardModule} from '@angular/material/card';
+
 
 const firebaseConfig = {
   apiKey: 'AIzaSyDP8jeTulRDQDku1U2Ml41At2ciHVK1j7A',
@@ -35,10 +38,15 @@ const firebaseConfig = {
   imports: [
     BrowserModule,
     BrowserModule,
+
     RouterModule,
     routes,
+
     AngularFireModule.initializeApp(firebaseConfig),
-    AngularFireAuthModule
+    AngularFireAuthModule,
+
+    MatButtonModule,
+    MatCardModule
   ],
   providers: [AuthGuardService],
   bootstrap: [AppComponent]
