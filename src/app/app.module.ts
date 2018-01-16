@@ -4,6 +4,15 @@ import {NgModule} from '@angular/core';
 
 import {AppComponent} from './app.component';
 import {AngularFireModule} from 'angularfire2';
+import {LoginComponent} from './login/login.component';
+import {EmailComponent} from './email/email.component';
+import {SignupComponent} from './signup/signup.component';
+
+import {AngularFireAuthModule} from 'angularfire2/auth';
+import {RecordsComponent} from './records/records.component';
+import {RouterModule} from '@angular/router';
+import {routes} from './app.routes';
+import {AuthGuardService} from './auth-guard.service';
 
 
 const firebaseConfig = {
@@ -17,13 +26,21 @@ const firebaseConfig = {
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LoginComponent,
+    EmailComponent,
+    SignupComponent,
+    RecordsComponent
   ],
   imports: [
     BrowserModule,
-    AngularFireModule.initializeApp(firebaseConfig)
+    BrowserModule,
+    RouterModule,
+    routes,
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireAuthModule
   ],
-  providers: [],
+  providers: [AuthGuardService],
   bootstrap: [AppComponent]
 })
 
