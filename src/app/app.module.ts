@@ -16,6 +16,7 @@ import {AuthGuardService} from './auth-guard.service';
 
 import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
+import {MatToolbarModule} from '@angular/material/toolbar';
 
 
 const firebaseConfig = {
@@ -46,7 +47,8 @@ const firebaseConfig = {
     AngularFireAuthModule,
 
     MatButtonModule,
-    MatCardModule
+    MatCardModule,
+    MatToolbarModule
   ],
   providers: [AuthGuardService],
   bootstrap: [AppComponent]

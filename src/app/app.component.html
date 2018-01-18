@@ -1,0 +1,16 @@
+<mat-toolbar>
+
+  <div class="header-container">
+    <span>Jogging App</span>
+
+    <button mat-button *ngIf="isLogoutButtonActive()"
+            (click)="logout()"
+            class="logout-button">
+      <span [style.margin-right.px]="5">Logout</span>
+      <i class="fas fa-sign-out-alt fa-2x"></i>
+    </button>
+  </div>
+</mat-toolbar>
+
+<router-outlet></router-outlet>
+
