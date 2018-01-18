@@ -1,9 +1,24 @@
-<div class="login-choise-container">
-  <mat-card>
-    <button mat-button (click)="loginGoogle()">
+<mat-card class="login-choise-container">
+  <mat-list>
+    <mat-list-item>
       <i class="fab fa-google" aria-hidden="true"></i>
-      <span [style.margin-left.px]="5">Login with Google</span>
-    </button>
+      <button mat-button class="choise-item" (click)="loginGoogle()">
+        Login with Google
+      </button>
+    </mat-list-item>
 
-  </mat-card>
-</div>
+    <mat-list-item>
+      <i class="far fa-envelope"></i>
+      <button mat-button routerLink="/login-email" class="choise-item">
+        Email
+      </button>
+    </mat-list-item>
+
+    <mat-list-item>
+      <a routerLink="/signup" class="choise-item" [style.margin-top.px]="15">
+        No account? <strong>Create one here</strong>
+      </a>
+    </mat-list-item>
+  </mat-list>
+</mat-card>
+
