@@ -20,7 +20,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatListModule} from '@angular/material/list';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {NoopAnimationsModule} from '@angular/platform-browser/animations';
 
 
 
@@ -57,7 +57,7 @@ const firebaseConfig = {
     MatListModule,
     MatFormFieldModule,
     MatInputModule,
-    BrowserAnimationsModule
+    NoopAnimationsModule
   ],
   providers: [AuthGuardService],
   bootstrap: [AppComponent]
