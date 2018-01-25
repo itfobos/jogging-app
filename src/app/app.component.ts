@@ -23,4 +23,8 @@ export class AppComponent {
   isLogoutButtonActive() {
     return this.fireAuth.auth.currentUser !== null;
   }
+
+  goToRoot() {
+    this.router.navigateByUrl('/');
+  }
 }

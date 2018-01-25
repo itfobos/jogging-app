@@ -1,5 +1,8 @@
 import {Component} from '@angular/core';
+
 import {FormControl, Validators} from '@angular/forms';
+import {ChangedFormErrorStateMatcher} from '../common/changed-form-error-state-matcher';
+
 
 @Component({
   selector: 'app-email',
@@ -7,11 +10,12 @@ import {FormControl, Validators} from '@angular/forms';
   styleUrls: ['./email.component.css']
 })
 export class EmailComponent {
-  public email = new FormControl('', [Validators.required, Validators.email]);
+  emailFormControl = new FormControl('', [
+    Validators.required,
+    Validators.email,
+  ]);
 
-  getErrorMessage() {
-    return this.email.hasError('required') ? 'You must enter a value' :
-      this.email.hasError('email') ? 'Not a valid email' : '';
-  }
+  matcher = new ChangedFormErrorStateMatcher();
 
+  hidePassword = true;
 }

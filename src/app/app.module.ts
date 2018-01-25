@@ -1,5 +1,6 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 
 import {AppComponent} from './app.component';
@@ -19,9 +20,10 @@ import {MatCardModule} from '@angular/material/card';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatListModule} from '@angular/material/list';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatIconModule} from '@angular/material/icon';
+
 import {MatInputModule} from '@angular/material';
 import {NoopAnimationsModule} from '@angular/platform-browser/animations';
-
 
 
 const firebaseConfig = {
@@ -43,7 +45,8 @@ const firebaseConfig = {
   ],
   imports: [
     BrowserModule,
-    BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
 
     RouterModule,
     routes,
@@ -55,6 +58,7 @@ const firebaseConfig = {
     MatCardModule,
     MatToolbarModule,
     MatListModule,
+    MatIconModule,
     MatFormFieldModule,
     MatInputModule,
     NoopAnimationsModule

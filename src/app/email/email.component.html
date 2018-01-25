@@ -1,6 +1,29 @@
 <mat-card class="form-container">
+
   <mat-form-field>
-    <input matInput placeholder="Enter your email" (ngModel)="email" required>
-    <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+    <input matInput placeholder="Email" [formControl]="emailFormControl" [errorStateMatcher]="matcher" required>
+
+    <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+      Please enter a valid email address
+    </mat-error>
+
+    <mat-error *ngIf="emailFormControl.hasError('required')">
+      Email is <strong>required</strong>
+    </mat-error>
   </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="Enter your password" [type]="hidePassword ? 'password' : 'text'">
+    <span *ngIf="hidePassword" matSuffix (click)="hidePassword = !hidePassword">
+        <i class="fas fa-eye"></i>
+      </span>
+
+    <span *ngIf="!hidePassword" matSuffix (click)="hidePassword = !hidePassword">
+        <i class="fas fa-eye-slash"></i>
+      </span>
+  </mat-form-field>
+
+  <!--TODO:-->
+  <button mat-button>Login</button>
+
 </mat-card>
